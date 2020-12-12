@@ -8,7 +8,10 @@ export interface BasketState {
   totalCost?: number;
 }
 
-const initialState: BasketState = {};
+const initialState: BasketState = {
+  pizzaCount: 0,
+  totalCost: 0,
+};
 
 export default (
   state: BasketState = initialState,
