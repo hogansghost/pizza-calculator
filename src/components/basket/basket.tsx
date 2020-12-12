@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Price } from '../index';
 
+import * as Styled from './basket.styles';
+
 export interface BasketProps {
   pizzaCount: number;
   totalCost: number;
@@ -12,10 +14,19 @@ export const Basket: React.FunctionComponent<BasketProps> = ({
   totalCost = 0,
 }) => {
   return (
-    <div>
-      <h4>Previous order:</h4>
-      <p>Pizza count: {pizzaCount}</p>
-      <p>Total cost: <Price amount={totalCost} /></p>
-    </div>
+    <Styled.Basket>
+      <Styled.Header>Previous order:</Styled.Header>
+
+      <Styled.BasketRow>
+        <Styled.BasketCol>Pizza count:</Styled.BasketCol>
+        <Styled.BasketCol>{pizzaCount}</Styled.BasketCol>
+      </Styled.BasketRow>
+
+      <Styled.BasketRow>
+        <Styled.BasketCol>Total cost:</Styled.BasketCol>
+        <Styled.BasketCol><Price amount={totalCost} /></Styled.BasketCol>
+      </Styled.BasketRow>
+
+    </Styled.Basket>
   );
 }

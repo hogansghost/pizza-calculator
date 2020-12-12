@@ -15,8 +15,10 @@ import {
 import {
   Basket,
   Button,
+  ContentWidth,
   Input,
   Price,
+  Widget,
 } from './components';
 
 function App() {
@@ -91,62 +93,64 @@ function App() {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmitOrder}>
-        <div>
-          <Input
-            label="Number of guests"
-            type="number"
-            name="noOfGuests"
-            handleChange={handleNumberOfGuestsChange}
-          />
-        </div>
-        <div>
-          <Input
-            label="Slices per guest"
-            type="number"
-            name="slicesPerGuest"
-            handleChange={handleSlicesPerGuestChange}
-          />
-        </div>
-        <div>
-          <Input
-            label="Number of slices in a pizza"
-            type="number"
-            name="slicesInPizza"
-            handleChange={handleSlicesInPizzaChange}
-          />
-        </div>
-        <div>
-          <Input
-            label="Pizza cost"
-            type="number"
-            name="cost"
-            handleChange={handleTotalCostChange}
-          />
-        </div>
+    <ContentWidth>
+      <Widget>
+        <form onSubmit={handleSubmitOrder}>
+          <div>
+            <Input
+              label="Number of guests"
+              type="number"
+              name="noOfGuests"
+              handleChange={handleNumberOfGuestsChange}
+            />
+          </div>
+          <div>
+            <Input
+              label="Slices per guest"
+              type="number"
+              name="slicesPerGuest"
+              handleChange={handleSlicesPerGuestChange}
+            />
+          </div>
+          <div>
+            <Input
+              label="Number of slices in a pizza"
+              type="number"
+              name="slicesInPizza"
+              handleChange={handleSlicesInPizzaChange}
+            />
+          </div>
+          <div>
+            <Input
+              label="Pizza cost"
+              type="number"
+              name="cost"
+              handleChange={handleTotalCostChange}
+            />
+          </div>
 
-        <div>
-          <p>Total pizza count: {totalPizzaCount}</p>
-          <p>Total cost: <Price amount={totalCost} /></p>
-        </div>
+          <div>
+            <p>Total pizza count: {totalPizzaCount}</p>
+            <p>Total cost: <Price amount={totalCost} /></p>
+          </div>
 
-        <Button
-          disabled={isSubmitDisabled}
-          type="submit"
-          onClick={handleSubmitOrder}
-        >
-          Order
-        </Button>
-      </form>
+          <Button
+            disabled={isSubmitDisabled}
+            type="submit"
+            onClick={handleSubmitOrder}
+          >
+            Order
+          </Button>
+        </form>
 
-      {!!basket.pizzaCount && !!basket.totalCost && (
-        <Basket
-          pizzaCount={basket.pizzaCount}
-          totalCost={basket.totalCost}
-        />
-      )}
-    </div>
+        {!!basket.pizzaCount && !!basket.totalCost && (
+          <Basket
+            pizzaCount={basket.pizzaCount}
+            totalCost={basket.totalCost}
+          />
+        )}
+      </Widget>
+    </ContentWidth>
   )
 }
 
