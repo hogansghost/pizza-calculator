@@ -33,3 +33,11 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### Todo / wish list
+
+- Improve styling.
+- Create extendable form component for unique layout per form.
+- React Context for changing the currency.
+- Make use of Redux Reselect as optimisation.
+- Add unit tests across the board.
