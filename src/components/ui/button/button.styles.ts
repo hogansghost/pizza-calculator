@@ -15,6 +15,10 @@ export const Button = styled.button<ButtonProps>`
   transition: all 333ms;
   font-size: 1.35em;
 
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+
   &:hover:not([disabled]),
   &:focus:not([disabled]) {
     transform: translateY(-1px);
@@ -32,7 +36,8 @@ export const Button = styled.button<ButtonProps>`
   `}
 
   &[disabled] {
-    opacity: 0.7;
+    opacity: 0.6;
     box-shadow: none;
+    filter: grayscale(0.6);
   }
 `;
