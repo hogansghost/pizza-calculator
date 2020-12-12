@@ -13,6 +13,7 @@ import {
 } from "./redux/actions";
 
 import {
+  Basket,
   Button,
   Input,
   Price,
@@ -140,11 +141,10 @@ function App() {
       </form>
 
       {!!basket.pizzaCount && !!basket.totalCost && (
-        <div>
-          <h4>Previous order:</h4>
-          <p>Pizza count: {basket.pizzaCount}</p>
-          <p>Total cost: <Price amount={basket.totalCost} /></p>
-        </div>
+        <Basket
+          pizzaCount={basket.pizzaCount}
+          totalCost={basket.totalCost}
+        />
       )}
     </div>
   )
